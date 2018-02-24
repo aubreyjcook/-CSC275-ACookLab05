@@ -4,17 +4,22 @@ public class Lab05 {
 	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		boolean continueInput = true;
+		boolean numberRetrieved = false;
 		
 		do {
 			try {
 				System.out.println("Enter a number 1-26: ");
-				int userInput = input.nextInt();
+				int userInputNumber = input.nextInt();
+				
+				numberRetrieved = true;
 			}
 			catch(InputMismatchException ex) {
-				System.out.println("Please input a number.");
+				System.out.println("Bad input.");
 				input.nextLine();
 			}
-		} while(continueInput);
+		} while(!numberRetrieved);
+		
+		System.out.println("Enter a phrase: ");
+		String userInputPhrase = input.next();
 	}
 }

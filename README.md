@@ -22,6 +22,3 @@ Example 3:
 User Input: 2
 User Input: hello
 Expected output: jgnnq
-
-
-
