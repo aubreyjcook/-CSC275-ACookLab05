@@ -21,5 +21,15 @@ public class Lab05 {
 		
 		System.out.println("Enter a phrase: ");
 		String userInputPhrase = input.next();
+		
+		String newPhrase = shiftPhrase(userInputPhrase);
+		System.out.println(newPhrase);
+	}
+	
+	private String shiftPhrase(String userInputPhrase) {
+		String newPhrase;
+		newPhrase = userInputPhrase;
+		
+		return newPhrase;
 	}
 }
