@@ -24,16 +24,25 @@ public class Lab05 {
 		System.out.println("Enter a phrase: ");
 		String userInputPhrase = input.next();
 		
-		String newPhrase = shiftPhrase(userInputPhrase, userInputNumber);
-		System.out.println(newPhrase);
+		userInputPhrase = shiftPhrase(userInputPhrase, userInputNumber);
+		System.out.println(userInputPhrase);
+		
+		System.exit(0);
 	}
 	
 	private static String shiftPhrase(String userInputPhrase, int userInputNumber) {
 		char[] newPhrase = userInputPhrase.toCharArray();
-		for(int i = 0; i < newPhrase.length; i++) {
-			newPhrase[i] += userInputNumber;
+		for(int i = 0; i < userInputPhrase.length(); i++) {
+			char rot = newPhrase[i];
+			
+			//fix this with rot-n
+			if       (rot >= 'a' && rot <= 'm') rot += 13;
+            else if  (rot >= 'A' && rot <= 'M') rot += 13;
+            else if  (rot >= 'n' && rot <= 'z') rot -= 13;
+            else if  (rot >= 'N' && rot <= 'Z') rot -= 13;
+            
+			newPhrase[i] = rot;
 		}
-		
-		return newPhrase.toString();
+		return String.valueOf(newPhrase);
 	}
 }
