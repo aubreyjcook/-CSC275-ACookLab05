@@ -30,7 +30,10 @@ public class Lab05 {
 	
 	private static String shiftPhrase(String userInputPhrase, int userInputNumber) {
 		char[] newPhrase = userInputPhrase.toCharArray();
+		for(int i = 0; i < newPhrase.length; i++) {
+			newPhrase[i] += userInputNumber;
+		}
 		
-		return newPhrase;
+		return newPhrase.toString();
 	}
 }
